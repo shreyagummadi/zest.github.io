@@ -155,3 +155,13 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+.section {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.hero {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
