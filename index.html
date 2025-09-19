@@ -3,20 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Fed-EC: Bandwidth-Efficient Clustering-Based Federated Learning for Autonomous Visual Robot Navigation">
+        content="ZeST: an LLM-based Zero-Shot Traversability Navigation for Unknown Environments">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Fed-EC: Bandwidth-Efficient Clustering-Based Federated Learning for Autonomous Visual Robot Navigation</title>
+  <title>ZeST: an LLM-based Zero-Shot Traversability Navigation for Unknown Environments</title>
 
 
+<
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CT5YKE0DN0"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MVGD1X82KD"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-CT5YKE0DN0');
+  gtag('config', 'G-MVGD1X82KD');
 </script>
+
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -45,40 +47,55 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Fed-EC: Bandwidth-Efficient Clustering-Based Federated Learning for Autonomous Visual Robot Navigation</h1>
-          <div class="is-size-4 publication-authors">
+          <h1 class="title is-1 publication-title">ZeST: an LLM-based Zero-Shot Traversability Navigation for Unknown Environments</h1>
+          <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://shreyagummadi.com">Shreya Gummadi</a>,</span>
+              <a href="https://shreyagummadi.com">Shreya Gummadi</a><sup>1,*</sup>,</span>
             <span class="author-block">
-              <a href="https://mateusgasparino.com/">Mateus V. Gasparino</a>,</span>
+              <a href="https://mateusgasparino.com/">Mateus V. Gasparino</a><sup>1,*</sup>,</span>
             <span class="author-block">
-              <a href="https://deepakv.web.illinois.edu/">Deepak Vasisht</a>,
+              <a href="">Gianluca Capezzuto</a><sup>2</sup>,
+            </span>
+            <span class="author-block"></span>
+              <a href="https://scholar.google.com/citations?user=c602uMcAAAAJ&hl=pt-BR">Marcelo Becker</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="http://daslab.illinois.edu/index.html#girish">Girish Chowdhary</a>
+              <a href="http://daslab.illinois.edu/index.html#girish">Girish Chowdhary</a><sup>1</sup>
             </span>
           </div>
 
           <div class="is-size-4 publication-authors">
-            <span class="author-block">University of Illinois at Urbana-Champaign</span>
+            <span class="author-block"><sup>*</sup>Equal Contribution</span> <br>
+            <span class="author-block"><sup>1</sup>University of Illinois at Urbana-Champaign,</span>
+            <span class="author-block"><sup>2</sup>University of São Paulo</span>
           </div>
 
           <div class="is-size-5 publication-venue">
-            Published in IEEE Robotics and Automation Letters (RA-L), 2024 <br>
-            Presented at IEEE International Conference on Robotics and Automation (ICRA), 2025
+            Under Review
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://ieeexplore.ieee.org/document/10753028"
+                <a href="https://arxiv.org/abs/2508.19131"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
+                      <i class="ai ai-arxiv"></i>
                   </span>
-                  <span>Paper</span>
+                  <span>arXiv</span>
                 </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/matval/zest_navigation"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
             </div>
 
           </div>
@@ -88,15 +105,17 @@
   </div>
 </section>
 
-<section class="hero teaser>
+<section class="hero teaser">
   <div class="container is-max-desktop">
-    <div class="hero-body has-text-centered">
-      <img src="./static/images/overview.jpg" 
-           alt="Fed-EC static teaser image" 
-           style="max-width: 80%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);" />
-      <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-        Overview of the Fed-EC Framework.
-      </h2>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <img src="./static/images/overview.jpg" 
+             alt="ZeST static teaser image" 
+             class="teaser-image" />
+        <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
+          Overview of the ZeST Framework.
+        </h2>
+      </div>
     </div>
   </div>
 </section>
@@ -109,7 +128,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Centralized learning requires data to be aggregated at a central server, which poses significant challenges in terms of data privacy and bandwidth consumption. Federated learning presents a compelling alternative, however, vanilla federated learning methods deployed in robotics aim to learn a single global model across robots that works ideally for all. But in practice one model may not be well suited for robots deployed in various environments. This letter proposes Federated-EmbedCluster (Fed-EC), a clustering-based federated learning framework that is deployed with vision based autonomous robot navigation in diverse outdoor environments. The framework addresses the key federated learning challenge of deteriorating model performance of a single global model due to the presence of non-IID data across real-world robots. Extensive real-world experiments validate that Fed-EC reduces the communication size by 23x for each robot while matching the performance of centralized learning for goal-oriented navigation and outperforms local learning. Fed-EC can transfer previously learnt models to new robots that join the cluster.
+            The advancement of robotics and autonomous navigation systems hinges on the ability to accurately predict terrain traversability. Traditional methods for generating datasets to train these prediction models often involve putting robots into potentially hazardous environments, posing risks to equipment and safety. To solve this problem, we present ZeST, a novel approach leveraging visual reasoning capabilities of Large Language Models (LLMs) to create a traversability map in real-time without exposing robots to danger. Our approach not only performs zero-shot traversability and mitigates the risks associated with real-world data collection but also accelerates the development of advanced navigation systems, offering a cost-effective and scalable solution. To support our findings, we present navigation results, in both controlled indoor and unstructured outdoor environments. As shown in the experiments, our method provides safer navigation when compared to other state-of-the-art methods, constantly reaching the final goal. 
           </p>
         </div>
       </div>
@@ -122,15 +141,28 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths has-text-centered">
-        <h2 class="title is-3">Demo Video</h2>
-        <video id="vid" 
-        controls 
-        onended="this.currentTime = 0; this.play();" 
-        src="./static/videos/demo.mp4" 
-        class="is-fullwidth" 
-        style="max-width: 80%; margin:auto; display:block;">
- 
-        </video>
+        <h2 class="title is-3">Results</h2>
+        <img src="./static/images/exp.jpg" 
+             alt="Fed-EC static teaser image" 
+             class="teaser-image" />
+        <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
+          Visualization of ZeST deployed in challenging environments compared to NoMaD and CoNVOI. ZeST reached the goal each run in indoor and outdoor environment.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section"></section>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <img src="./static/images/octomap.jpg" 
+             alt="Fed-EC static teaser image" 
+             class="teaser-image" />
+        <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
+          Traversability maps generate by ZeST in indoor and outdoor environments. Colors towards red represent more traversable terrains.
+        </h2>
       </div>
     </div>
   </div>
@@ -139,16 +171,12 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@ARTICLE{10753028,
-      author={Gummadi, Shreya and Gasparino, Mateus V. and Vasisht, Deepak and Chowdhary, Girish},
-      journal={IEEE Robotics and Automation Letters}, 
-      title={Fed-EC: Bandwidth-Efficient Clustering-Based Federated Learning for Autonomous Visual Robot Navigation}, 
-      year={2024},
-      volume={9},
-      number={12},
-      pages={11841-11848},
-      keywords={Data models;Federated learning;Computational modeling;Navigation;Servers;Training;Bandwidth;Robot vision systems;Predictive models;Decentralized control;Computer vision;Distributed robot systems;robotics in under-resourced settings;federated learning;vision-based navigation},
-      doi={10.1109/LRA.2024.3498778}}
+    <pre><code>@article{gummadi2025zest,
+      title={ZeST: an LLM-based Zero-Shot Traversability Navigation for Unknown Environments},
+      author={Gummadi, Shreya and Gasparino, Mateus V and Capezzuto, Gianluca and Becker, Marcelo and Chowdhary, Girish},
+      journal={arXiv preprint arXiv:2508.19131},
+      year={2025}
+    }
     </code></pre>
   </div>
 </section>
